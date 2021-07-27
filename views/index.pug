@@ -1,0 +1,15 @@
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Weather App
+  link(rel='stylesheet' type='text/css' href='css/style.css')
+form(action='/' method='POST')
+  h1 Find weather in...
+  label(for='countryInput')
+    input#countryInput(type='text' placeholder='Country Name' name='countryName' value=`${process.env.DEFAULT_COUNTRY}` required)
+    span Country Name
+  label(for='cityInput')
+    input#cityInput(type='text' placeholder='City Name' name='cityName' value=`${process.env.DEFAULT_CITY}` required)
+    span City Name
+  button(type='submit') Search

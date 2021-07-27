@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #ebf2f6;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+form label {
+  position: relative;
+  display: block;
+}
+form label input {
+  box-sizing: border-box;
+  display: block;
+  border: none;
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+form label input::-moz-placeholder {
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #999;
+}
+
+form label input:-ms-input-placeholder {
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #999;
+}
+
+form label input::placeholder {
+  transition: all 0.2s ease-in-out;
+  color: #999;
+}
+
+form label input:focus, form label input.populated {
+  padding-top: 28px;
+  padding-bottom: 12px;
+}
+
+form label input:focus::-moz-placeholder, form label input.populated::-moz-placeholder {
+  color: transparent;
+}
+
+form label input:focus:-ms-input-placeholder, form label input.populated:-ms-input-placeholder {
+  color: transparent;
+}
+
+form label input:focus::placeholder, form label input.populated::placeholder {
+  color: transparent;
+}
+
+form label input:focus + span, form label input.populated + span {
+  opacity: 1;
+  top: 10px;
+}
+
+form label span {
+  color: #35dc9b;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  transition: all 0.2s ease-in-out;
+  border: none;
+  background: #1aaf75;
+  color: #fff;
+  padding: 16px 40px;
+  width: 100%;
+}
+
+button:hover {
+  background: #109f67;
+}
+
+.weather-card {
+  margin: 20px 5px;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 270px;
+  height: 270px;
+  background-color: white;
+  box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+  -webkit-animation: appear 500ms ease-in-out forwards;
+          animation: appear 500ms ease-in-out forwards;
+}
+.weather-card h1 {
+  position: absolute;
+  font-weight: 300;
+  font-size: 80px;
+  color: #B8B8B8;
+  bottom: 0;
+  left: 35px;
+  opacity: 0;
+  transform: translateX(150px);
+  -webkit-animation: title-appear 500ms ease-in 500ms forwards;
+          animation: title-appear 500ms ease-in 500ms forwards;
+}
+.weather-card p {
+  position: absolute;
+  font-weight: 300;
+  font-size: 28px;
+  color: #d2d2d2;
+  opacity: 0;
+  bottom: 0;
+  left: 35px;
+  -webkit-animation: title-appear 500ms ease-in 500ms forwards;
+          animation: title-appear 500ms ease-in 500ms forwards;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  top: 0;
+  float: right;
+  margin: 40px 40px 0 0;
+  -webkit-animation: weather-icon-move 5s ease-in infinite;
+          animation: weather-icon-move 5s ease-in infinite;
+}
+
+@-webkit-keyframes weather-icon-move {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes weather-icon-move {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@-webkit-keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes title-appear {
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes title-appear {
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

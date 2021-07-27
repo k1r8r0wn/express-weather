@@ -1,0 +1,12 @@
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title=`Current weather in ${cityName}`
+  link(rel='stylesheet' type='text/css' href='css/style.css')
+.weather-wrapper
+  .weather-card
+    img.weather-icon(src=weatherIconLink)
+    h1=`${currentTemp}º`
+    p=cityName
+  button(onclick="window.location = '/'") Go back to search
